@@ -1,9 +1,12 @@
 #!/bin/bash
 clear
 
+#  sysinfo.sh
+#  Test File To Pull Back System Data For Testing
 #
-# Test File To Pull Back System Data For Testing
+#  Created by LaVelton R. Carroway
 #
+
 echo "System Configuration v1.32"
 echo ""
 echo "Date:                                            "  && date
@@ -26,8 +29,8 @@ echo "Networking Info:                                 "  && ifconfig #| grep "i
 echo ""
 echo "Networking Hardware Ports Info:                  "  && networksetup -listallhardwareports
 echo ""
-# echo "NetBIOS Info:                                    "  && nmblookup -V
-# echo ""
+#echo "NetBIOS Info:                                    "  && nmblookup -V
+#echo ""
 echo "Apache Info:                                     "  && httpd -v
 echo ""
 echo "MySQL Info:                                      "  && mysql --version
@@ -72,8 +75,8 @@ echo ""
 echo "================================================="
 echo "SQLite Info (System):                            "  && /usr/bin/sqlite3 -version
 echo ""
-# echo "PostgreSQL Info (System):                        "  && /usr/bin/psql -V
-# echo ""
+#echo "PostgreSQL Info (System):                        "  && /usr/bin/psql -V
+#echo ""
 echo "Perl Info (System):                              "  && /usr/bin/perl -v
 echo ""
 echo "Python Info (System):                            "  && /usr/bin/python --version
