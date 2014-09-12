@@ -7,7 +7,7 @@ clear
 #  Created by LaVelton R. Carroway
 #
 
-echo "System Configuration v1.33"
+echo "System Configuration v1.32"
 echo ""
 echo "Date:                                            "  && date
 echo ""
@@ -75,11 +75,9 @@ echo ""
 echo "================================================="
 echo "SQLite Info (System):                            "  && /usr/bin/sqlite3 -version
 echo ""
-# echo "PostgreSQL Info (System):                        "  && /usr/bin/psql -V
-# echo ""
+#echo "PostgreSQL Info (System):                        "  && /usr/bin/psql -V
+#echo ""
 echo "Perl Info (System):                              "  && /usr/bin/perl -v
-echo ""
-echo "PHP Info (System):                               "  && /usr/bin/php -v
 echo ""
 echo "Python Info (System):                            "  && /usr/bin/python --version
 echo ""
