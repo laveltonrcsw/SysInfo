@@ -7,85 +7,110 @@ clear
 #  Created by LaVelton R. Carroway
 #
 
-echo "System Configuration v1.34"
+bold=`tput bold`
+normal=`tput sgr0`
+
+echo "${bold}System Configuration v1.44a"
 echo ""
-echo "Date:                                            "  && date
+echo "${bold}Date:                                             ${normal}"  && date
 echo ""
-echo "System:                                          "  && uname -a
+echo "${bold}System:                                           ${normal}"  && uname -a
 echo ""
-echo "Hostname:                                        "  && hostname
+echo "${bold}Hostname:                                         ${normal}"  && hostname
 echo ""
-echo "Uptime:                                          "  && uptime
+echo "${bold}Uptime:                                           ${normal}"  && uptime
 echo ""
-echo "Disk Space:                                      "  && df -h
+echo "${bold}Disk Space:                                       ${normal}"  && df -h
 echo ""
-echo "Disk Type:                                       "  && mount
+echo "${bold}Disk Type:                                        ${normal}"  && mount
 echo ""
-echo "Active Processes:                                "  && ps -a
+echo "${bold}Active Processes:                                 ${normal}"  && ps -a
 echo ""
-echo "Pull My Finger:                                  "  && finger -l
+echo "${bold}Pull My Finger:                                   ${normal}"  && finger -l
 echo ""
-echo "Networking Info:                                 "  && ifconfig #| grep "inet"
+echo "${bold}Networking Info:                                  ${normal}"  && ifconfig #| grep "inet"
 echo ""
-echo "Networking Hardware Ports Info:                  "  && networksetup -listallhardwareports
+echo "${bold}Networking Hardware Ports Info:                   ${normal}"  && networksetup -listallhardwareports
 echo ""
-#echo "NetBIOS Info:                                    "  && nmblookup -V
+#echo "${bold}NetBIOS Info:                                     ${normal}"  && nmblookup -V
 #echo ""
-echo "Apache Info:                                     "  && httpd -v
+echo "${bold}Apache Info:                                      ${normal}"  && httpd -v
 echo ""
-echo "MySQL Info:                                      "  && mysql --version
+echo "${bold}MySQL Info:                                       ${normal}"  && mysql --version
 echo ""
-echo "SQLite Info:                                     "  && sqlite3 -version
+echo "${bold}SQLite Info:                                      ${normal}"  && sqlite3 -version
 echo ""
-echo "PostgreSQL Info:                                 "  && psql -V
+echo "${bold}PostgreSQL Info (Postgres.app):                   ${normal}"  && psql -V
 echo ""
-echo "Perl Info:                                       "  && perl -v
+echo "${bold}Perl Info:                                        ${normal}"  && perl -v
 echo ""
-echo "Python Info:                                     "  && python --version
+echo "${bold}Python Info:                                      ${normal}"  && python --version
 echo ""
-echo "Ruby Info:                                       "  && ruby --version
+echo "${bold}Ruby Info:                                        ${normal}"  && ruby --version
 echo ""
-echo "Java Info:                                       "  && java -version
+echo "${bold}Java Info:                                        ${normal}"  && java -version
 echo ""
-echo "PHP Info:                                        "  && php -v
+echo "${bold}PHP Info:                                         ${normal}"  && php -v
 echo ""
-echo "Mono Framework Info:                             "  && mono -V
+echo "${bold}Mono Framework Info:                              ${normal}"  && mono -V
 echo ""
-echo "Git Info:                                        "  && git --version
+echo "${bold}Git Info:                                         ${normal}"  && git --version
 echo ""
-echo "MacPort Info:                                    "  && port version
+echo "${bold}MacPort Info:                                     ${normal}"  && port version
 echo ""
-echo "MacRuby Info:                                    "  && macruby --version
+#echo "${bold}MacRuby Info:                                     ${normal}"  && macruby --version
+#echo ""
+echo "${bold}Apple Xcode Info:                                 ${normal}"  && xcodebuild -version
 echo ""
-echo "LLVM (Low Level Virtual Machine) Compiler Info:  "  && llvm-gcc --version
+echo "${bold}Apple Xcode SDKs Info:                            ${normal}"  && xcodebuild -showsdks
 echo ""
-echo "Clang Compiler Info:                             "  && clang --version
+echo "${bold}LLVM (Low Level Virtual Machine) Compiler Info:   ${normal}"  && llvm-gcc --version
 echo ""
-echo "GNU Project Debugger Info:                       "  && ggdb -version
+#echo "${bold}Clang Compiler Info:                              ${normal}"  && clang --version
+#echo ""
+echo "${bold}NVIDIA Cuda Compiler Info:                        ${normal}"  && nvcc -V
 echo ""
-echo "Node.js Info:                                    "  && node -v
+echo "${bold}GNU Project Debugger Info:                        ${normal}"  && ggdb -version
 echo ""
-strAZUREVERSION=$(azure | grep "Tool version")
-echo "Windows Azure Info:                              "  && printf "${strAZUREVERSION:9}\n"
+echo "${bold}Mono C# Compiler Info:                            ${normal}"  && mcs --version
 echo ""
-echo "GnuPG Info:                                      "  && gpg2 --version
+echo "${bold}F# Interactive CLI Info:                          ${normal}"  && fsharpi --help | grep "Interactive for"
 echo ""
-echo "Scala Info:                                      "  && scala -version
+echo "${bold}Android Debug Bridge Info:                        ${normal}"  && adb version
 echo ""
-echo "================================================="
-echo "SQLite Info (System):                            "  && /usr/bin/sqlite3 -version
+echo "${bold}Node.js Info:                                     ${normal}"  && node -v
 echo ""
-echo "PostgreSQL Info (OS X Server):                   "  && /Applications/Server.app/Contents/ServerRoot/usr/bin/psql -V
+echo "${bold}Npm (Node.js) Info:                               ${normal}"  && npm --version
 echo ""
-echo "Perl Info (System):                              "  && /usr/bin/perl -v
+#strAZUREVERSION=$(azure | grep "Tool version")
+#echo "${bold}Windows Azure Info:                               ${normal}"  && printf "${strAZUREVERSION:9}\n"
+echo "${bold}Windows Azure Info:                               ${normal}"  && azure -v
 echo ""
-echo "PHP Info (System):                               "  && /usr/bin/php -v
+strDOTNETVERSION=$(dotnet --version | grep "Version  :")
+echo "${bold}Microsoft .NET Core Shared Framework Host Info:   ${normal}"  && printf "${strAZUREVERSION}\n"
 echo ""
-echo "Python Info (System):                            "  && /usr/bin/python --version
+echo "${bold}GnuPG Info:                                       ${normal}"  && gpg2 --version
 echo ""
-echo "Ruby Info (System):                              "  && /usr/bin/ruby --version
+echo "${bold}Scala Info:                                       ${normal}"  && scala -version
 echo ""
-echo "Java Info (System):                              "  && /Library/Java/Home/bin/java -version
+echo "${bold}Rust Info:                                        ${normal}"  && rustc --version
+echo ""
+echo "${bold}Haskell Platform Info:                            ${normal}"  && ghc --version; cabal --version; haddock --version
+echo ""
+echo "${bold}================================================= ${normal}"
+echo "${bold}SQLite Info (System):                             ${normal}"  && /usr/bin/sqlite3 -version
+echo ""
+echo "${bold}PostgreSQL Info (OS X Server):                    ${normal}"  && /Applications/Server.app/Contents/ServerRoot/usr/bin/psql -V
+echo ""
+echo "${bold}Perl Info (System):                               ${normal}"  && /usr/bin/perl -v
+echo ""
+echo "${bold}PHP Info (System):                                ${normal}"  && /usr/bin/php -v
+echo ""
+echo "${bold}Python Info (System):                             ${normal}"  && /usr/bin/python --version
+echo ""
+echo "${bold}Ruby Info (System):                               ${normal}"  && /usr/bin/ruby --version
+echo ""
+echo "${bold}Java Info (System):                               ${normal}"  && /Library/Java/Home/bin/java -version
 echo ""
 
 
