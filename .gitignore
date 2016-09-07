@@ -38,3 +38,7 @@ DerivedData/
 .ds_store
 .Trashes
 
+# BBEDIT BACKUPS #
+##################
+*.*~
+
